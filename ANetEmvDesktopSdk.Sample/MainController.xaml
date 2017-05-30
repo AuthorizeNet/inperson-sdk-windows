@@ -1,0 +1,27 @@
+﻿<Window x:Class="ANetEmvDesktopSdk.Sample.MainController"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ANetEmvDesktopSdk.Sample"
+        mc:Ignorable="d"
+        Title="MainController" Height="496.971" Width="534.965">
+    <Grid Margin="0,0,2,0">
+        <Button x:Name="button" Content="EMV Transaction" HorizontalAlignment="Left" Margin="30,104,0,0" VerticalAlignment="Top" Height="24" Width="218" Click="emvTransaction" FontSize="16"/>
+        <Button x:Name="button1" Content="Process Card(QuickChip)" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top" Height="24" Width="218" Click="processCard" FontSize="16"/>
+        <Button x:Name="button2" Content="Discard Card Data" HorizontalAlignment="Left" Margin="269,140,0,0" VerticalAlignment="Top" Height="24" Width="218" Click="discardCard" FontSize="16"/>
+        <Button x:Name="button3" Content="Quick Chip Transaction" HorizontalAlignment="Left" Margin="269,104,0,0" VerticalAlignment="Top" Height="24" Width="218" Click="quickChipTransaction" FontSize="16"/>
+        <Button x:Name="button4" Content="Quick Chip(Headless)" HorizontalAlignment="Left" Margin="30,181,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="quickChipHeadless" FontSize="16"/>
+        <Button x:Name="button6" Content="Refresh" HorizontalAlignment="Left" Margin="431,49,0,0" VerticalAlignment="Top" Height="24" Width="56" RenderTransformOrigin="0.466,-1.126" Click="close"/>
+        <TextBox x:Name="amount" HorizontalAlignment="Left" Height="23" Margin="201,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="transactionStatus" HorizontalAlignment="Center" Margin="23,376,22,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="480" TextAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="button5" Content="Device Info" HorizontalAlignment="Left" Margin="269,181,0,0" VerticalAlignment="Top" Height="24" Width="218" Click="getDeviceInfo" FontSize="16"/>
+        <Button x:Name="button9" Content="Check for updates" HorizontalAlignment="Left" Margin="30,221,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="checkForUpdates" FontSize="16"/>
+        <Button x:Name="button7" Content="OTA Update" HorizontalAlignment="Left" Margin="269,221,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="OTAUpdates" FontSize="16"/>
+        <Button x:Name="button8" Content="OTA Updates(Headless)" HorizontalAlignment="Left" Margin="30,264,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="OTAUpdatesHeadless" FontSize="16"/>
+        <CheckBox x:Name="isTestReader" Content="Test Reader" HorizontalAlignment="Left" Margin="269,264,0,0" VerticalAlignment="Top" FontSize="16" Height="24" Width="218"/>
+        <ProgressBar x:Name="OTAProgressBar" HorizontalAlignment="Left" Height="10" Margin="175,333,0,0" VerticalAlignment="Top" Width="182"/>
+        <Button x:Name="button10" Content="Logout" HorizontalAlignment="Left" Margin="30,49,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="logout"/>
+        <CheckBox x:Name="terminalMode" Content="Only MSR" HorizontalAlignment="Left" Margin="382,264,0,0" VerticalAlignment="Top" FontSize="16"/>
+    </Grid>
+</Window>
