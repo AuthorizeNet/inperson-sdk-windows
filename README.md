@@ -21,8 +21,7 @@ Steps to integrate:
 
 3.  Open the project in Visual Studio
 
-4.  Add reference to ANetEmvDesktop.dll, BBDeviceClassicDesktop.dll and
-BBDeviceOTAClassicDesktop.dll
+4.  Add reference to ANetEmvDesktop.dll
 
 5.  Add the following references from NuGet Manager, Tap on Tools -&gt;
 NuGet Package Manager -&gt; Manage NuGet Package Manager
