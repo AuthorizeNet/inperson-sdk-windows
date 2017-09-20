@@ -1,2 +1,0 @@
-
-9/15/2017 3:54:58 PM:readerDeviceInfoSystem.Collections.Generic.Dictionary`2[System.String,System.String]
