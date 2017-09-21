@@ -1,32 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ANetEmvDesktopSdk.Sample.exe" version="1.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:publisher="Visa Inc" asmv2:product="ANetEmvDesktopSdk.Sample" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="ANetEmvDesktopSdk.Sample.exe" version="1.0.0.8" publicKeyToken="feec707c21e04c57" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ANetEmvDesktopSdk.Sample" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="ANetEmvDesktopSdk.Sample.exe" parameters="" />
   </entryPoint>
-  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
   <trustInfo>
     <security>
       <applicationRequestMinimum>
-        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
         <defaultAssemblyRequest permissionSetReference="Custom" />
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!-- UAC Manifest Options
-             If you want to change the Windows User Account Control level replace the 
-             requestedExecutionLevel node with one of the following.
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
-            Remove this element if your application requires this virtualization for backwards
-            compatibility.
-        -->
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
@@ -44,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ANetEmvDesktopSdk.dll" size="1956352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ANetEmvDesktopSdk.dll" size="1929728">
       <assemblyIdentity name="ANetEmvDesktopSdk" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DD1ZUUARLFRsFWPqAaAemTCF9Ju5/JjDRHcGmxwMlzE=</dsig:DigestValue>
+        <dsig:DigestValue>Ko/lh6a5/X1un+VVUrPVfY958KwndLQcgS1+7UyfwPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ANetEmvDesktopSdk.Sample.exe" size="35840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ANetEmvDesktopSdk.Sample.exe" size="36776">
       <assemblyIdentity name="ANetEmvDesktopSdk.Sample" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ubC5jWR+9q41+PX3C8j8UlhskylX8ss2iYblrM0ZSV4=</dsig:DigestValue>
+        <dsig:DigestValue>6VQuWtQcjfgFjLKl2Y9eF15VcNhk873dPRgD4v1PDLE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -124,30 +122,13 @@
       <dsig:DigestValue>UKI37qsuDc3ci4EYxC3jCofwCMEGrLTpbp4waY8FlqQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Env.xml" size="180" writeableType="applicationData">
+  <file name="Env.xml" size="188" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Qn93iX+cIkpo9U+Rue4L3zPGLhbvGCfo4LHGwXmnfjs=</dsig:DigestValue>
+      <dsig:DigestValue>OK3yODuiS6TNrG2gpbqEm1lEidw4g3dzEPEMTJ28+Ks=</dsig:DigestValue>
     </hash>
   </file>
-  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-    <application>
-      <!-- A list of the Windows versions that this application has been tested on and is
-           is designed to work with. Uncomment the appropriate elements and Windows will 
-           automatically selected the most compatible environment. -->
-      <!-- Windows Vista -->
-      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
-      <!-- Windows 7 -->
-      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
-      <!-- Windows 8 -->
-      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
-      <!-- Windows 8.1 -->
-      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
-      <!-- Windows 10 -->
-      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
-    </application>
-  </compatibility>
-</asmv1:assembly>
+<publisherIdentity name="CN=VISA\ptaneja" issuerKeyHash="c53b6cb1053fa57fdf05defde996f40c1287df97" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/Rp+sdQpxsP4ntDu6MnCW1f2k5W55o0FuZ6viNJ5KNo=</DigestValue></Reference></SignedInfo><SignatureValue>sQONvi1YA89WRSMud9FcleEj/kEEWb1FG6obJI/OE4g7FUe7OJ8oFd7+dd+BC6sfF8x0j+CBn4x/03lfSNOkp8sYSRizIyiW+9Kubf80+hRogHCZtHl+7h7F2rCuBrPb7ysKer26+yb71kyMFsUzHrf+M1x3CckckX9uNvv+2gs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>zXwk76acIXD/JWlhbKc62GkwAc7GxabQpx+Hv7lKedQChNef+FnMZVf2EwGTQYZNu5GIrYG+/Pt7O3UHwP5+iayqY4rijO+WACIs39TlpcpP198zCxJUKTBRtV37KICcZi1kbvPv+3FEZWv4x0tvmwdo4L4vTRffcY2Ei590Uys=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="da2879d288af9eb9058de6b99593f6575bc2c9e8eed09ef8c3c629d4b17e1afd" Description="" Url=""><as:assemblyIdentity name="ANetEmvDesktopSdk.Sample.exe" version="1.0.0.8" publicKeyToken="feec707c21e04c57" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VISA\ptaneja</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/1GmfEqOXF5DP/t7gOSGad2B3h2rnxtkS9cok5Rx7Fs=</DigestValue></Reference></SignedInfo><SignatureValue>dG8dJahfyuQ5Of+HKPbog8TCAnsOyEdM3RYWTa7KUuWdiDbrxWlcHIEOGaJt+dVewQCk7OZh75kiGZziHOboJwrDQbDxejI/Ut7vkyY14/Fs8FMZoAaYYksAyMKvvRzuUYb1Yokm4pxaSfpsYgILt8ssK1OY4m2VM8/8rLMzjEw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>zXwk76acIXD/JWlhbKc62GkwAc7GxabQpx+Hv7lKedQChNef+FnMZVf2EwGTQYZNu5GIrYG+/Pt7O3UHwP5+iayqY4rijO+WACIs39TlpcpP198zCxJUKTBRtV37KICcZi1kbvPv+3FEZWv4x0tvmwdo4L4vTRffcY2Ei590Uys=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQZkGm05Wt3IhILGQ2cydY2zANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAVgBJAFMAQQBcAHAAdABhAG4AZQBqAGEwHhcNMTcwNzExMTk0MjE0WhcNMTgwNzEyMDE0MjE0WjAjMSEwHwYDVQQDHhgAVgBJAFMAQQBcAHAAdABhAG4AZQBqAGEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAM18JO+mnCFw/yVpYWynOthpMAHOxsWm0Kcfh7+5SnnUAoTXn/hZzGVX9hMBk0GGTbuRiK2Bvvz7ezt1B8D+fomsqmOK4ozvlgAiLN/U5aXKT9ffMwsSVCkwUbVd+yiAnGYtZG7z7/txRGVr+MdLb5sHaOC+L00X33GNhIufdFMrAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAbwS7VIeCYDOG0VCNU6Ozgl7tRzcjTEMRainAYz1Tsk4yU9KOOTBmL2uClOgk+spOMIAvvIJKgvyvmCT4w/IwEIdfqMC5n/93K+nu63ksmU3mH1W5fMQ2SWqi05nWG4zjOVlOP+bgOHJEdvhZLyOeF6ReoWeMUvILVeaGkGCCmtA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
