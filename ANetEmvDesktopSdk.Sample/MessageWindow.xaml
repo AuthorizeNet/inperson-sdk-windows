@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MessageWindow" Height="409.629" Width="582.963">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Text, Mode=OneWay}" VerticalAlignment="Center" Height="261" Width="359" TextAlignment="Center" FontSize="14" Margin="24,23,39,30" Cursor="Arrow"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="359" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="555"/>
     </Grid>
 </Window>

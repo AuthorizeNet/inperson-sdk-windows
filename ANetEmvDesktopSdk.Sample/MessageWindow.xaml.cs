@@ -29,7 +29,7 @@ namespace ANetEmvDesktopSdk.Sample
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            this.textBlock.Text = iTextMessage;
+            this.textBox.Text = iTextMessage;
         }
     }
 }

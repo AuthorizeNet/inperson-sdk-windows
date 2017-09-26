@@ -19,10 +19,11 @@
         <Button x:Name="button9" Content="Check for updates" HorizontalAlignment="Left" Margin="30,221,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="checkForUpdates" FontSize="16"/>
         <Button x:Name="button7" Content="OTA Update" HorizontalAlignment="Left" Margin="269,221,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="OTAUpdates" FontSize="16"/>
         <Button x:Name="button8" Content="OTA Updates(Headless)" HorizontalAlignment="Left" Margin="30,264,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="OTAUpdatesHeadless" FontSize="16"/>
-        <CheckBox x:Name="isTestReader" Content="Test Reader" HorizontalAlignment="Left" Margin="269,264,0,0" VerticalAlignment="Top" FontSize="16" Height="24" Width="218"/>
+        <CheckBox x:Name="isTestReader" Content="Test Reader" HorizontalAlignment="Left" Margin="30,297,0,0" VerticalAlignment="Top" FontSize="16" Height="24" Width="135"/>
         <ProgressBar x:Name="OTAProgressBar" HorizontalAlignment="Left" Height="10" Margin="175,333,0,0" VerticalAlignment="Top" Width="182"/>
         <Button x:Name="button10" Content="Logout" HorizontalAlignment="Left" Margin="30,49,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="logout"/>
-        <CheckBox x:Name="terminalMode" Content="Only MSR" HorizontalAlignment="Left" Margin="382,264,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <CheckBox x:Name="connectionMode" Content="Bluetooth" HorizontalAlignment="Left" Margin="269,293,0,0" VerticalAlignment="Top" Width="105" FontSize="16"/>
+        <CheckBox x:Name="terminalMode" Content="Only MSR" HorizontalAlignment="Left" Margin="321,297,0,0" VerticalAlignment="Top" FontSize="16" Height="24"/>
+        <CheckBox x:Name="connectionMode" Content="Bluetooth" HorizontalAlignment="Left" Margin="183,297,0,0" VerticalAlignment="Top" Width="105" FontSize="16" Height="24"/>
+        <Button x:Name="cancelTask" Content="Cancel Headless Task" HorizontalAlignment="Left" Margin="269,264,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.262,-0.467" Height="24" FontSize="16" Click="cancelHeadless"/>
     </Grid>
 </Window>

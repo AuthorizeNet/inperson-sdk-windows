@@ -23,7 +23,7 @@ namespace ANetEmvDesktopSdk.Sample
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.txtUsername.Text = "SandboxQATest1";
-            this.txtPassword.Password = "Authnet101b";
+            this.txtPassword.Password = "Authnet101d";
 
             backgroundWorkerLogin = new BackgroundWorker();
             this.backgroundWorkerLogin.DoWork += new DoWorkEventHandler(this.backgroundWorkerLogin_GetAuthenticationToken);

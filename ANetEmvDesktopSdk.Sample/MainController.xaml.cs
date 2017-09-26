@@ -244,6 +244,7 @@ namespace ANetEmvDesktopSdk.Sample
 
             this.Dispatcher.Invoke(() =>
             {
+                this.cancelTask.Visibility = Visibility.Visible;
                 if (isSuccess)
                 {
                     Random random = new Random();
@@ -291,6 +292,7 @@ namespace ANetEmvDesktopSdk.Sample
             Debug.Write("MainController:transactionCanceled");
             this.Dispatcher.Invoke(() =>
             {
+                this.cancelTask.Visibility = Visibility.Visible;
                 this.transactionStatus.Text = @"MainController:transactionCanceled";
             });
         }
@@ -298,7 +300,10 @@ namespace ANetEmvDesktopSdk.Sample
         void SdkListener.hideCancelTransaction()
         {
             Debug.Write("MainController:hideCancelTransaction");
-
+            this.Dispatcher.Invoke(() =>
+            {
+                this.cancelTask.Visibility = Visibility.Hidden;
+            });
         }
 
         void SdkListener.processCardProgress(TransactionStatus iProgress)
@@ -411,6 +416,7 @@ namespace ANetEmvDesktopSdk.Sample
                 {
                     this.transactionStatus.Text = "Update failed.";
                 }
+                this.cancelTask.Visibility = Visibility.Visible;
             });
         }
 
@@ -499,6 +505,11 @@ namespace ANetEmvDesktopSdk.Sample
             Application.Current.MainWindow = mainWindow;
             this.Close();
             mainWindow.ShowDialog();
+        }
+
+        private void cancelHeadless(object sender, RoutedEventArgs e)
+        {
+            this.launcher.cancelTransaction();
         }
     }
 }
