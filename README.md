@@ -1,5 +1,3 @@
-**_IMPORTANT: Currently this SDK is intended for integration/preview use with the Authorize.Net Sandbox only at this time.  This page will be updated with a list of production processors as soon as those processors are fully certified.  Feel free to use the Issues list for any development questions/comments/concerns._**
-
 Overview:
 =========
 
