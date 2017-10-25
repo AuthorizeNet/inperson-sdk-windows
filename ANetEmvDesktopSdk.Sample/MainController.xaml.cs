@@ -459,7 +459,7 @@ namespace ANetEmvDesktopSdk.Sample
             });
         }
 
-        void SdkListener.BTConnected()
+        void SdkListener.BTConnected(BTDeviceInfo iDeviceInfo)
         {
             Debug.Write("MainController.BTConnected");
 
