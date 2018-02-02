@@ -138,10 +138,11 @@ On selection call the below method to establish the connection with the device
 >   public void connectBTAtIndex(int iSelectedIndex) Refer: SDKLauncher
 ```
 Implement the below methods of SDKListener: Refer SDKListener
+```
 >   void BTPairedDevicesScanResult(List<BTDeviceInfo> iPairedDevicesList); Callback method which returns the near by devices
 >   void BTConnected(BTDeviceInfo iDeviceInfo); Callback on Successful Bluetooth connection with the selected device
 >   void BTConnectionFailed(); Callback on failure of Bluetooth connection.
-```
+
 
 Transaction Processing:
 ========================
