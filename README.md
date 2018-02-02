@@ -105,14 +105,14 @@ Set the reader device type:
  SDK supports two devices: AnywhereCommerce_Walker and IDTech_Augusta
  AnywhereCommerce_Walker is select by default
 ```
->     public void setReadername(ReaderName readerName) Refer: SDKLauncher
+>   public void setReadername(ReaderName readerName) Refer: SDKLauncher
 
 Set the terminal mode:
 ======================
 ```
 SDK allows Swipe or Insert_or_swipe. Insert_or_swipe accepts CHIP Based transactions as well as Swipe/MSR transaction, Swipe accepts only MSR/Swipe transactions. 
 ```
->         public void setTerminalMode(TerminalMode iTerminalCapability)
+>   public void setTerminalMode(TerminalMode iTerminalCapability)
 ```
   Insert_or_swipe is selected by default
   Refer to the SDKLauncher file and the sample app for more details.
@@ -122,7 +122,7 @@ Set the reader device connection type:
 ```
 Only AnywhereCommerce_Walker device supports two types of connection: USB and Bluetooth. IDTech_Augusta only supports USB connection. 
 ```
->         public void setReadername(ReaderName readerName) Refer: SDKLauncher
+>   public void setReadername(ReaderName readerName) Refer: SDKLauncher
 
 Setup the Bluetooth connection:
 ==============================
@@ -131,19 +131,16 @@ Setup the Bluetooth connection:
  public void setConnection(ConnectionMode iConnectionMode) Refer: SDKLauncher
  Call the below method to discover the near by devices and present the list to the user
 ```
->         public void establishBTConnectionAndRetrieveNearByDevices(SdkListener iListener)
+>   public void establishBTConnectionAndRetrieveNearByDevices(SdkListener iListener)
 ```
 On selection call the below method to establish the connection with the device
 ```
->         public void connectBTAtIndex(int iSelectedIndex) Refer: SDKLauncher
+>   public void connectBTAtIndex(int iSelectedIndex) Refer: SDKLauncher
 ```
 Implement the below methods of SDKListener: Refer SDKListener
-     Callback method which returns the near by devices
->         void BTPairedDevicesScanResult(List<BTDeviceInfo> iPairedDevicesList);
-     Callback on Successful Bluetooth connection with the selected device
->         void BTConnected(BTDeviceInfo iDeviceInfo);
-     Callback on failure of Bluetooth connection.
->         void BTConnectionFailed();
+>   void BTPairedDevicesScanResult(List<BTDeviceInfo> iPairedDevicesList); Callback method which returns the near by devices
+>   void BTConnected(BTDeviceInfo iDeviceInfo); Callback on Successful Bluetooth connection with the selected device
+>   void BTConnectionFailed(); Callback on failure of Bluetooth connection.
 ```
 
 Transaction Processing:
