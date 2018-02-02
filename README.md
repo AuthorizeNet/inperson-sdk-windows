@@ -95,9 +95,8 @@ Set the terminal mode:
 ======================
 >     SDK allows Swipe or Insert_or_swipe. Insert_or_swipe accepts CHIP Based transactions as well as Swipe/MSR transaction, Swipe accepts only MSR/Swipe transactions. 
 >     public void setTerminalMode(TerminalMode iTerminalCapability)
-
-AnetEMVModeInsertOrSwipe is selected by default
-Refer to the AnetEMVManager.h file and the sample app for more details.
+>     Insert_or_swipe is selected by default
+>     Refer to the SDKLauncher file and the sample app for more details.
 
 Set the reader device connection type:
 =====================================
