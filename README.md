@@ -5,6 +5,8 @@ Windows EMV SDK allows merchant application to accept chip card payments.
 EMV SDK securely does a chip transaction; it is a certified solution
 with TSYS processor. It is advisable that before using this SDK developer must read about AuthorizeNet CSharp SDK. CSharp SDK provides interface to communicate with Authorize.Net system. 
 
+To determine which processor you use, you can submit an API call to [getMerchantDetailsRequest](https://developer.authorize.net/api/reference/#transaction-reporting-get-merchant-details). The response contains a `processors` object.
+
 Supported Encrypted Readers:
 ===================
 [Supported reader devices can be obtained from Authorize.Net from POS Portal](https://partner.posportal.com/authorizenet/auth/
