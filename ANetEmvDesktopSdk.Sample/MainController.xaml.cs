@@ -101,6 +101,7 @@ namespace ANetEmvDesktopSdk.Sample
         {
             this.launcher.setTerminalMode((this.terminalMode.IsChecked == true) ? TerminalMode.Swipe : TerminalMode.Insert_or_swipe);
             this.launcher.setConnection((this.connectionMode.IsChecked == true) ? ConnectionMode.Bluetooth : ConnectionMode.USB);
+            this.launcher.setReadername((this.readerName.IsChecked == true) ? ReaderName.IDTech_Augusta : ReaderName.AnywhereCommerce_Walker);
             this.launcher.startQuickChipTransaction(this.getRequest(), SDKTransactionType.GOODS, this);
         }
 
@@ -109,6 +110,7 @@ namespace ANetEmvDesktopSdk.Sample
             Debug.Write("quickChipHeadless" + this.button4 + this.launcher);
             this.launcher.setTerminalMode((this.terminalMode.IsChecked == true) ? TerminalMode.Swipe : TerminalMode.Insert_or_swipe);
             this.launcher.setConnection((this.connectionMode.IsChecked == true) ? ConnectionMode.Bluetooth : ConnectionMode.USB);
+            this.launcher.setReadername((this.readerName.IsChecked == true) ? ReaderName.IDTech_Augusta : ReaderName.AnywhereCommerce_Walker);
             this.launcher.startQuickChipWithoutUI(this.getRequest(), SDKTransactionType.GOODS, this);
         }
 
@@ -244,7 +246,6 @@ namespace ANetEmvDesktopSdk.Sample
 
             this.Dispatcher.Invoke(() =>
             {
-                this.cancelTask.Visibility = Visibility.Visible;
                 if (isSuccess)
                 {
                     Random random = new Random();
@@ -292,7 +293,6 @@ namespace ANetEmvDesktopSdk.Sample
             Debug.Write("MainController:transactionCanceled");
             this.Dispatcher.Invoke(() =>
             {
-                this.cancelTask.Visibility = Visibility.Visible;
                 this.transactionStatus.Text = @"MainController:transactionCanceled";
             });
         }
@@ -300,10 +300,7 @@ namespace ANetEmvDesktopSdk.Sample
         void SdkListener.hideCancelTransaction()
         {
             Debug.Write("MainController:hideCancelTransaction");
-            this.Dispatcher.Invoke(() =>
-            {
-                this.cancelTask.Visibility = Visibility.Hidden;
-            });
+
         }
 
         void SdkListener.processCardProgress(TransactionStatus iProgress)
@@ -416,7 +413,6 @@ namespace ANetEmvDesktopSdk.Sample
                 {
                     this.transactionStatus.Text = "Update failed.";
                 }
-                this.cancelTask.Visibility = Visibility.Visible;
             });
         }
 
@@ -459,19 +455,19 @@ namespace ANetEmvDesktopSdk.Sample
             });
         }
 
-        void SdkListener.BTConnected(BTDeviceInfo iDeviceInfo)
-        {
-            Debug.Write("MainController.BTConnected");
+        //void SdkListener.BTConnected()
+        //{
+        //    Debug.Write("MainController.BTConnected");
 
-            this.Dispatcher.Invoke(() =>
-            {
-                if (!object.ReferenceEquals(this.listWindow, null))
-                {
-                    this.listWindow.Hide();
-                    this.listWindow.Close();
-                }
-            });
-        }
+        //    this.Dispatcher.Invoke(() =>
+        //    {
+        //        if (!object.ReferenceEquals(this.listWindow, null))
+        //        {
+        //            this.listWindow.Hide();
+        //            this.listWindow.Close();
+        //        }
+        //    });
+        //}
 
         void SdkListener.BTConnectionFailed()
         {
@@ -485,6 +481,10 @@ namespace ANetEmvDesktopSdk.Sample
                     MessageBox.Show("Could not connect establish the connection.");
                 }
             });
+        }
+
+        void SdkListener.isAugustaReaderDeviceConnected(bool isConnected)
+        {
         }
 
         private void selectApplicationAction(object sender, ApplicationSelectedEventArgs e)
@@ -507,9 +507,9 @@ namespace ANetEmvDesktopSdk.Sample
             mainWindow.ShowDialog();
         }
 
-        private void cancelHeadless(object sender, RoutedEventArgs e)
+        void SdkListener.BTConnected(BTDeviceInfo iDeviceInfo)
         {
-            this.launcher.cancelTransaction();
+            throw new NotImplementedException();
         }
     }
 }

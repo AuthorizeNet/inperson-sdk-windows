@@ -22,7 +22,7 @@ namespace ANetEmvDesktopSdk.Sample
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            this.txtUsername.Text = "SandboxQATest1";
+            this.txtUsername.Text = "SandboxQATest2";
             this.txtPassword.Password = "Authnet101d";
 
             backgroundWorkerLogin = new BackgroundWorker();
@@ -178,10 +178,10 @@ namespace ANetEmvDesktopSdk.Sample
                     this.Dispatcher.Invoke(() =>
                     {
                         MainController.merchantName = this.response.merchantContact.merchantName;  // optional
-                        MainController.merchantID = "888000000108 "; // optional
+                        MainController.merchantID = "********0108 "; // optional
                         mainController = new MainController(this.sdkEnvironment, 
-                            "840", 
-                            "0114", 
+                            "840",
+                            "00222273", 
                             this.skipSignatureValue, 
                             this.showReceiptValue, 
                             "123456789WINSDK", 
