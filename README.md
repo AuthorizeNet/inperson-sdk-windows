@@ -5,7 +5,7 @@ The In-Person Windows SDK enables your payment application to securely submit ch
 
 This SDK is currently a certified solution with TSYS. To determine which processor you use, you can submit an API call to [getMerchantDetailsRequest](https://developer.authorize.net/api/reference/#transaction-reporting-get-merchant-details). The response contains a `processors` object master.
 
-For a list of frequently asked questions, see [our EMV FAQ page](https://www.authorize.net/support/emvfaqs/).
+For a list of frequently asked questions, see [our EMV FAQ page](https://support.authorize.net/s/article/Merchant-EMV-Chip-FAQs).
 
 Supported Encrypted Readers
 ===================
