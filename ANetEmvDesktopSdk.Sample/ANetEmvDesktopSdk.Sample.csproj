@@ -73,6 +73,36 @@
     <Reference Include="ANetEmvDesktopSdk">
       <HintPath>..\ANetEmvDesktopSdk\ANetEmvDesktopSdk.dll</HintPath>
     </Reference>
+    <Reference Include="Augusta_config">
+      <HintPath>.\Augusta_config.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_device">
+      <HintPath>.\Augusta_device.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_emv">
+      <HintPath>.\Augusta_emv.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_icc">
+      <HintPath>.\Augusta_icc.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_config">
+      <HintPath>.\Augusta_KB_config.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_device">
+      <HintPath>.\Augusta_KB_device.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_msr">
+      <HintPath>.\Augusta_KB_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_KB_parse_">
+      <HintPath>.\Augusta_KB_parse_.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_msr">
+      <HintPath>.\Augusta_msr.dll</HintPath>
+    </Reference>
+    <Reference Include="Augusta_parse">
+      <HintPath>.\Augusta_parse.dll</HintPath>
+    </Reference>
     <Reference Include="AuthorizeNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AuthorizeNet.1.9.4\lib\AuthorizeNet.dll</HintPath>
       <Private>True</Private>

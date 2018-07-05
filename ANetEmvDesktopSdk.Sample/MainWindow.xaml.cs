@@ -21,14 +21,21 @@ namespace ANetEmvDesktopSdk.Sample
         public MainWindow()
         {
             InitializeComponent();
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            this.txtUsername.Text = "SandboxQATest2";
-            this.txtPassword.Password = "Authnet101d";
+            //this.txtUsername.Text = "SandboxQATest2";
+            //this.txtPassword.Password = "Authnet101d";
+
+            this.txtUsername.Text = "qafdctest1";
+            this.txtPassword.Password = "FDCAuthnet#2018a";
+
+            //this.txtUsername.Text = "qalynk1owner";
+            //this.txtPassword.Password = "LynkAuthnet#2017";
 
             backgroundWorkerLogin = new BackgroundWorker();
             this.backgroundWorkerLogin.DoWork += new DoWorkEventHandler(this.backgroundWorkerLogin_GetAuthenticationToken);
             this.backgroundWorkerLogin.ProgressChanged += new ProgressChangedEventHandler(this.backgroundWorkerLogin_GetAuthenticationTokenProgress);
-            this.backgroundWorkerLogin.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.backgroundWorkerLogin_GetAuthenticationTokenCompleted); 
+            this.backgroundWorkerLogin.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.backgroundWorkerLogin_GetAuthenticationTokenCompleted);
         }
 
         private void OnPayClicked(object context, RoutedEventArgs state)
@@ -103,7 +110,7 @@ namespace ANetEmvDesktopSdk.Sample
             arguments.Add(password);
             arguments.Add("123456789WINSDK");
 
-            string[] workerArguments = new string[] { username, password, "123456789WINSDK",  environment};
+            string[] workerArguments = new string[] { username, password, "123456789WINSDK", environment };
             backgroundWorkerLogin.RunWorkerAsync(workerArguments);
         }
 
@@ -167,7 +174,7 @@ namespace ANetEmvDesktopSdk.Sample
             mobileDeviceLoginResponse response = e.Result as mobileDeviceLoginResponse;
             MainController mainController = null;
 
-            if (!object.ReferenceEquals(response, null) && !object.ReferenceEquals(response.sessionToken, null)) 
+            if (!object.ReferenceEquals(response, null) && !object.ReferenceEquals(response.sessionToken, null))
             {
                 this.response = response;
                 Debug.WriteLine("RunnerBackground completed" + response.sessionToken);
@@ -179,22 +186,22 @@ namespace ANetEmvDesktopSdk.Sample
                     {
                         MainController.merchantName = this.response.merchantContact.merchantName;  // optional
                         MainController.merchantID = "********0108 "; // optional
-                        mainController = new MainController(this.sdkEnvironment, 
+                        mainController = new MainController(this.sdkEnvironment,
                             "840",
-                            "00222273", 
-                            this.skipSignatureValue, 
-                            this.showReceiptValue, 
-                            "123456789WINSDK", 
+                            "00222273",
+                            this.skipSignatureValue,
+                            this.showReceiptValue,
+                            "123456789WINSDK",
                             this.response.sessionToken);
                         Application.Current.MainWindow = mainController;
                         this.Close();
                         mainController.ShowDialog();
                     });
                 }
-                catch 
+                catch
                 (Exception exception)
                 {
-                    Debug.Write("Exception in main window" + exception.Message +  " " + mainController);
+                    Debug.Write("Exception in main window" + exception.Message + " " + mainController);
                 }
                 finally
                 {

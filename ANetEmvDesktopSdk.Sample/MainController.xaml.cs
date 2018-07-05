@@ -39,12 +39,12 @@ namespace ANetEmvDesktopSdk.Sample
             Application.Current.Exit += new ExitEventHandler(this.OnApplicationExit);
         }
 
-        public MainController(AuthorizeNet.Environment iEnvironment, 
-            string iCurrencyCode, 
-            string iTerminalID, 
-            bool iSkipSignature, 
-            bool iShowReceipt, 
-            string iDeviceID, 
+        public MainController(AuthorizeNet.Environment iEnvironment,
+            string iCurrencyCode,
+            string iTerminalID,
+            bool iSkipSignature,
+            bool iShowReceipt,
+            string iDeviceID,
             string iSessionToken)
         {
             InitializeComponent();
@@ -74,12 +74,13 @@ namespace ANetEmvDesktopSdk.Sample
                 // Ignore any errors that might occur while closing the file handle.
                 this.launcher.stopUSBConnection();
             }
-            catch {
+            catch
+            {
             }
         }
         private void emvTransaction(object sender, RoutedEventArgs e)
         {
-            this.launcher.setTerminalMode((this.terminalMode.IsChecked == true)? TerminalMode.Swipe : TerminalMode.Insert_or_swipe);
+            this.launcher.setTerminalMode((this.terminalMode.IsChecked == true) ? TerminalMode.Swipe : TerminalMode.Insert_or_swipe);
             this.launcher.setConnection((this.connectionMode.IsChecked == true) ? ConnectionMode.Bluetooth : ConnectionMode.USB);
             this.launcher.startEMVTransaction(this.getRequest(), SDKTransactionType.GOODS, this);
         }
@@ -161,7 +162,7 @@ namespace ANetEmvDesktopSdk.Sample
             this.amount.Text = (random.Next(1, 1000)).ToString();
         }
 
-        private createTransactionRequest getRequest ()
+        private createTransactionRequest getRequest()
         {
             Debug.Write("Session Token" + this.sessionToken);
             Random random = new Random();
@@ -199,7 +200,7 @@ namespace ANetEmvDesktopSdk.Sample
             Debug.Write("Session Token" + this.sessionToken);
             request.merchantAuthentication = new merchantAuthenticationType()
             {
-                
+
                 Item = this.sessionToken,
                 mobileDeviceId = this.deviceID,
                 ItemElementName = ItemChoiceType.sessionToken
@@ -207,7 +208,7 @@ namespace ANetEmvDesktopSdk.Sample
             return request;
         }
 
-       
+
         private void updateTransactionStatus(TransactionStatus iStatus)
         {
             Debug.Write("updateTransactionStatus" + iStatus);
@@ -217,7 +218,7 @@ namespace ANetEmvDesktopSdk.Sample
                     this.transactionStatus.Text = "No swiper device connected.";
                     break;
                 case TransactionStatus.WaitingForCard:
-                    this.transactionStatus.Text = (this.terminalMode.IsChecked == true)? "Please swipe the card." : "Please insert or swipe card.";
+                    this.transactionStatus.Text = (this.terminalMode.IsChecked == true) ? "Please swipe the card." : "Please insert or swipe card.";
                     break;
                 case TransactionStatus.CardReadError:
                     this.transactionStatus.Text = "Could not read the card, please remove the card and press ok to try again.";
@@ -375,7 +376,7 @@ namespace ANetEmvDesktopSdk.Sample
                     {
                         this.transactionStatus.Text = iErrorMessage;
                     }
-                    else 
+                    else
                     {
                         this.transactionStatus.Text = "Deivce is upto date.";
                     }
@@ -388,7 +389,7 @@ namespace ANetEmvDesktopSdk.Sample
             Debug.Write("MainController.OTAUpdateProgress" + iPercentage + iOTAUpdateType);
             this.Dispatcher.Invoke(() =>
             {
-                if (OTAUpdateType.ConfigUpdate ==iOTAUpdateType)
+                if (OTAUpdateType.ConfigUpdate == iOTAUpdateType)
                 {
                     this.transactionStatus.Text = "Updating Config...";
                 }
