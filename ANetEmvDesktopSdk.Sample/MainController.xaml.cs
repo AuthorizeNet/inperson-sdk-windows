@@ -108,6 +108,9 @@ namespace ANetEmvDesktopSdk.Sample
 
         private void quickChipHeadless(object sender, RoutedEventArgs e)
         {
+
+            if(this.connectionMode.IsChecked == true)
+                this.transactionStatus.Text = "Scanning bluetooth devices...";  //@Parth
             Debug.Write("quickChipHeadless" + this.button4 + this.launcher);
             this.launcher.setTerminalMode((this.terminalMode.IsChecked == true) ? TerminalMode.Swipe : TerminalMode.Insert_or_swipe);
             this.launcher.setConnection((this.connectionMode.IsChecked == true) ? ConnectionMode.Bluetooth : ConnectionMode.USB);
@@ -128,6 +131,7 @@ namespace ANetEmvDesktopSdk.Sample
         {
             Debug.Write("MainController:getDeviceInfo");
             this.transactionStatus.Text = "Getting device info...";
+            this.launcher.setReadername((this.readerName.IsChecked == true) ? ReaderName.IDTech_Augusta : ReaderName.AnywhereCommerce_Walker);
             this.launcher.setConnection((this.connectionMode.IsChecked == true) ? ConnectionMode.Bluetooth : ConnectionMode.USB);
             this.launcher.getAnyWhereReaderInfo(this);
         }
@@ -154,6 +158,15 @@ namespace ANetEmvDesktopSdk.Sample
             this.launcher.setConnection((this.connectionMode.IsChecked == true) ? ConnectionMode.Bluetooth : ConnectionMode.USB);
             this.launcher.startOTAUpdateWithNoUI(this, this.isTestReader.IsChecked ?? true);
             this.transactionStatus.Text = "Updating Config";
+        }
+
+        private void IsAugustaConnected(object sender, RoutedEventArgs e)
+        {
+            Debug.Write("MainController:IsAugustaConnected");
+            this.transactionStatus.Text = "Checking...";
+            this.launcher.setReadername(ReaderName.IDTech_Augusta);
+            this.launcher.isAugustaReaderDeviceConnected(this);
+            this.transactionStatus.Text = "";
         }
 
         private void close(object sender, RoutedEventArgs e)
@@ -226,6 +239,9 @@ namespace ANetEmvDesktopSdk.Sample
                 case TransactionStatus.RetrySwipe:
                     this.transactionStatus.Text = "Please swipe again.";
                     break;
+                case TransactionStatus.SwipeCard:
+                    this.transactionStatus.Text = "Please swipe..";
+                    break;
                 case TransactionStatus.ICCCard:
                     this.transactionStatus.Text = "Please insert the card.";
                     break;
@@ -294,7 +310,7 @@ namespace ANetEmvDesktopSdk.Sample
             Debug.Write("MainController:transactionCanceled");
             this.Dispatcher.Invoke(() =>
             {
-                this.transactionStatus.Text = @"MainController:transactionCanceled";
+                this.transactionStatus.Text = "Transaction Canceled.";
             });
         }
 
@@ -430,6 +446,7 @@ namespace ANetEmvDesktopSdk.Sample
         private void deviceSelected(object sender, ListItemSelectedEventArgs e)
         {
             this.launcher.connectBTAtIndex(e.SelecteIndex);
+            this.listWindow.Close();  
         }
 
         void SdkListener.BTPairedDevicesScanResult(List<BTDeviceInfo> iList)
@@ -440,7 +457,7 @@ namespace ANetEmvDesktopSdk.Sample
 
             this.Dispatcher.Invoke(() =>
             {
-                if (object.ReferenceEquals(this.listWindow, null))
+                if (object.ReferenceEquals(this.listWindow, null) || !this.listWindow.IsActive)
                 {
                     this.listWindow = new ListWindow(devices);
                     this.listWindow.refreshEvent += new SDKEventHandler(refreshAction);
@@ -484,8 +501,16 @@ namespace ANetEmvDesktopSdk.Sample
             });
         }
 
-        void SdkListener.isAugustaReaderDeviceConnected(bool isConnected)
+        void SdkListener.isAugustaReaderDeviceConnected(Dictionary<string, string> iDeviceInfo)
         {
+            if (iDeviceInfo != null)
+            {
+                MessageBox.Show("Augusta device connected. Serial Number : " + iDeviceInfo["serialNumber"] + " Firmware Version : " + iDeviceInfo["firmwareVersion"]);
+            }
+            else
+            {
+                MessageBox.Show("Augusta device NOT connected.");
+            }
         }
 
         private void selectApplicationAction(object sender, ApplicationSelectedEventArgs e)
@@ -510,7 +535,7 @@ namespace ANetEmvDesktopSdk.Sample
 
         void SdkListener.BTConnected(BTDeviceInfo iDeviceInfo)
         {
-            throw new NotImplementedException();
+            Debug.Write("MainController:SdkListener.BTConnected");
         }
     }
 }
