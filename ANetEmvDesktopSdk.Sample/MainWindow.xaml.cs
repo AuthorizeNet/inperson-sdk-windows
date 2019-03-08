@@ -23,15 +23,7 @@ namespace ANetEmvDesktopSdk.Sample
             InitializeComponent();
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //this.txtUsername.Text = "SandboxQATest2";
-            //this.txtPassword.Password = "Authnet101d";
-
-            this.txtUsername.Text = "qafdctest1";
-            this.txtPassword.Password = "FDCAuthnet#2018a";
-
-            //this.txtUsername.Text = "qalynk1owner";
-            //this.txtPassword.Password = "LynkAuthnet#2017";
-
+            
             backgroundWorkerLogin = new BackgroundWorker();
             this.backgroundWorkerLogin.DoWork += new DoWorkEventHandler(this.backgroundWorkerLogin_GetAuthenticationToken);
             this.backgroundWorkerLogin.ProgressChanged += new ProgressChangedEventHandler(this.backgroundWorkerLogin_GetAuthenticationTokenProgress);
