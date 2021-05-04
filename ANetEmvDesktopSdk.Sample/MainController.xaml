@@ -25,5 +25,6 @@
         <CheckBox x:Name="terminalMode" Content="Only MSR" HorizontalAlignment="Left" Margin="382,264,0,0" VerticalAlignment="Top" FontSize="16"/>
         <CheckBox x:Name="connectionMode" Content="Bluetooth" HorizontalAlignment="Left" Margin="269,293,0,0" VerticalAlignment="Top" Width="105" FontSize="16"/>
         <CheckBox x:Name="readerName" Content="Augusta Reader" HorizontalAlignment="Left" Margin="382,293,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button x:Name="button8_Copy" Content="Is Augusta Connected" HorizontalAlignment="Left" Margin="30,294,0,0" VerticalAlignment="Top" Width="218" Height="24" Click="IsAugustaConnected" FontSize="16"/>
     </Grid>
 </Window>
