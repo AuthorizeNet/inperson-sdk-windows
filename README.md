@@ -1,3 +1,5 @@
+***The In-Person SDK for Windows is deprecated when integrated with the BBPOS Chipper 2X reader.  The BBPOS Chipper 2X hardware is no longer available.***
+
 Overview
 =========
 
