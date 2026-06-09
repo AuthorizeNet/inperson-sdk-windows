@@ -58,12 +58,14 @@ namespace ANetEmvDesktopSdk.Sample
             this.sessionToken = iSessionToken;
             this.deviceID = iDeviceID;
 
-            Debug.Write("Session Token in Constructor" + iSessionToken);
+            Debug.Write("Session Token in Constructor");
             Random random = new Random();
             this.amount.Text = (random.Next(1, 1000)).ToString();
             this.launcher = new SdkLauncher(iEnvironment, iCurrencyCode, iTerminalID, iSkipSignature, iShowReceipt);
             this.launcher.setMerchantInfo(merchantName, merchantID);
+#if DEBUG
             this.launcher.enableLogging();
+#endif
         }
 
         private void OnApplicationExit(object sender, EventArgs e)
@@ -177,7 +179,7 @@ namespace ANetEmvDesktopSdk.Sample
 
         private createTransactionRequest getRequest()
         {
-            Debug.Write("Session Token" + this.sessionToken);
+            Debug.Write("Session Token");
             Random random = new Random();
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
@@ -210,7 +212,7 @@ namespace ANetEmvDesktopSdk.Sample
             {
                 transactionRequest = transaction
             };
-            Debug.Write("Session Token" + this.sessionToken);
+            Debug.Write("Session Token");
             request.merchantAuthentication = new merchantAuthenticationType()
             {
 

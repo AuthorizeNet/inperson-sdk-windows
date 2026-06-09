@@ -66,7 +66,6 @@ namespace ANetEmvDesktopSdk.Sample
                             Debug.WriteLine(">");
                             break;
                         case XmlNodeType.Text: //Display the text in each element.
-                            Debug.WriteLine(reader.Value);
                             string node = stack.Pop();
                             keyValue[node] = reader.Value;
                             break;
@@ -169,7 +168,7 @@ namespace ANetEmvDesktopSdk.Sample
             if (!object.ReferenceEquals(response, null) && !object.ReferenceEquals(response.sessionToken, null))
             {
                 this.response = response;
-                Debug.WriteLine("RunnerBackground completed" + response.sessionToken);
+                Debug.WriteLine("RunnerBackground completed");
                 //this.Hide();
 
                 try
